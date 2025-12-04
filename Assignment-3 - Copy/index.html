@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Selection App</title>
+  <!-- Bootstrap CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+   <!-- jQuery -->
+   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+   <!-- CSS -->
+   <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+      <!-- Nav -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+        <div class="container-fluid">
+          <button id="menu-toggle" class="btn btn-outline-light btn-sm align-self-start mt-2">Menu</button>
+          <a class="navbar-brand mx-auto" href="#">Course Selector</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Animated Navigation Menu (Custom) -->
+      <div id="animated-menu" class="animated-menu bg-dark p-3" style="display:none;">
+        <a href="#catalog" class="animated-link">All Courses</a>
+        <a href="#timetable" class="animated-link">My Schedule</a>
+        <a href="#comparison-panel" class="animated-link">Compare Courses</a>
+      </div>
+
+      <!-- search & filter -->
+      <div>
+        <h2 class="text-center">Find Courses</h2>
+
+        <!-- Search Textbox -->
+        <div class="d-flex justify-content-center">
+          <div class="row g-3" style="width: 800px;">
+            <div class="col-md-8">
+              <input 
+                type="text"
+                id="search-bar"
+                class="form-control"
+                placeholder="Search by course name, code..."
+
+              >
+            </div>
+            
+            <!-- Menu option -->
+            <div class="col-md-4">
+              <select id="category-filter" class="form-select">
+                <option value="">All Categories</option>
+                <option value="math">Math</option>
+                <option value="science">Science</option>
+                <option value="cs">Computer science</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    
+       <!-- Course catalog -->
+      <div class="container">
+        <h3>Course Catalog</h3>
+        <div id="catalog"></div>
+      </div>
+      
+      <!-- Course detail pannel -->
+      <!-- Timetable Section This was part one added-->
+      <div class="container mt-4">
+        <h3>Timetable</h3>
+
+        <div id="timetable">
+            <!-- JS will generate the weekly grid inside this wrapper -->
+            <div id="timetable-grid" class="timetable-grid"></div>
+        </div>
+      </div>
+
+      
+      <!-- Course Comparison Panel  this whole container was recently added-->
+      <div class="container mt-4">
+        <h3>Compare Courses</h3>
+
+        <div id="comparison-panel">
+            <table id="comparison-table" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Credits</th>
+                        <th>Instructor</th>
+                        <th>Schedule</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- JS will insert comparison rows here -->
+                </tbody>
+            </table>
+        </div>
+      </div>
+
+
+    </main>
+    <!-- Bootstrap js  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <!-- Place the js script here -->
+    <script src="script.js"></script>
+</body>
+</html>
